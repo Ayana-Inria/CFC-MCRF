@@ -9,43 +9,32 @@ This repository contains script versions of two PRISMA neural experiments:
 
 The private imagery, clusters, activations, checkpoints, and `.mat` files are intentionally **not** included in the repository. Follow the folder layout below to rebuild the project locally.
 
-## Repository layout
 
-```text
-.
-├── prisma_models/
-│   ├── dataloader.py          # shared PRISMA dataset and split loading
-│   ├── models_fcn.py          # FCN model
-│   ├── models_vit.py          # cross-modal attention / ViT-style model
-│   ├── train.py               # shared training and prediction loops
-│   └── utils.py               # shared image, raster, metrics, sliding-window helpers
-├── scripts/
-│   ├── train_fcn.py
-│   ├── train_vit.py
-│   ├── predict.py
-│   └── extract_activations.py
-├── matlab/
+## Project structure
+
+CFC-MCRF/
+│
+├── dataset.py
+├── utils.py
+├── networks.py
+├── train.py
+├── extract.py
+│
+├── MultiresCRF/
+│   ├── CFC-CRF_Model_Source/   # <- contains the functions building the multiresolution CRF 
+│   ├── Utils/                  # <- contains additional helper functions
+│   ├── gcmex-2.3.0/            # <- contains the grah-cut functions in C++ and the matlab wrapper
 │   ├── multires_CFCCRF.m
+│   ├── Assemb_Img_RemBord_Indexes.m
 │   └── utils_debug.m
-├── configs/
-│   ├── fcn.example.yaml
-│   ├── vit.example.yaml
-│   ├── predict.example.yaml
-│   └── extract_activations.example.yaml
-├── data/
-│   ├── raw/                   # private image tiles; not tracked by git
-│   ├── processed/             # optional preprocessed rasters; not tracked
-│   ├── external/              # optional external files; not tracked
-│   ├── mat/
-│   │   ├── clusters/          # private MATLAB cluster .mat files
-│   │   └── activations/       # private activation/posterior .mat files
-│   └── splits/                # train/test tile id lists
-└── outputs/
-    ├── checkpoints/           # trained PyTorch weights; not tracked
-    ├── predictions/           # predicted labels/posteriors; not tracked
-    ├── activations/           # exported .mat activations; not tracked
-    └── logs/
-```
+│
+├── PRISMA_Tensors/        # ← outputs of neural nets go here (.mat)
+├── PRISMA_Clusters/       # ← outputs (clusters) from utils_debug.m go here (.mat)
+├── data/                  # ← raw data (not uploaded)
+│
+├── requirements.txt
+└── README.md
+
 
 ## Data layout
 
