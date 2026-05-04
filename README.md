@@ -2,9 +2,10 @@
 
 This repository contains the code related to the TGRS'26 paper:
 
-```
+
 M. Pastorino, G. Moser, S. B. Serpico and J. Zerubia, "Cross-Modal Fusion and Classification of Hyperspectral and Panchromatic Remote Sensing Images with Deep Learning and Multiscale CRFs," in IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2026.3686949.
-```
+
+
 <IMG> 
 
 The private imagery, clusters, activations, checkpoints, and `.mat` files are **not** included in the repository. Follow the folder layout below to rebuild the project locally.
@@ -27,9 +28,9 @@ The private imagery, clusters, activations, checkpoints, and `.mat` files are **
 │   ├── Assemb_Img_RemBord_Indexes.m
 │   └── utils_debug.m
 │
-├── PRISMA_Tensors/dataset/        # ← outputs of neural nets go here (.mat)
-├── PRISMA_Clusters/dataset/       # ← outputs (clusters) from utils_debug.m go here (.mat)
-├── data/dataset/                  # ← raw data (not uploaded)
+├── PRISMA_Tensors/dataset/        # <- outputs of neural nets go here (.mat)
+├── PRISMA_Clusters/dataset/       # <- outputs (clusters) from utils_debug.m go here (.mat)
+├── data/dataset/                  # <- raw data (not uploaded)
 │
 ├── requirements.txt
 └── README.md
