@@ -16,7 +16,14 @@ The private imagery, clusters, activations, checkpoints, and `.mat` files are **
 │
 ├── dataset.py
 ├── utils.py
-├── networks.py
+├── net/
+│   ├── net.py
+│   ├── crossmodal_net.py
+│   ├── loss.py  
+├── utils/
+│   ├── utils.py
+│   ├── utils_dataset.py
+│   ├── utils_network.py
 ├── train.py
 ├── extract.py
 │
@@ -32,6 +39,7 @@ The private imagery, clusters, activations, checkpoints, and `.mat` files are **
 ├── PRISMA_Clusters/dataset/       # <- outputs (clusters) from utils_debug.m go here (.mat)
 ├── data/dataset/                  # <- raw data (not uploaded)
 │
+├── main.py
 ├── requirements.txt
 └── README.md
 ```
@@ -56,52 +64,26 @@ Create an environment and install dependencies:
 pip install -r requirements.txt
 ```
 
-## 🐔 Train the neural (Python) models and extract activations / posteriors
-
-### Train the FCN model
-
-Edit `configs/fcn.example.yaml`, then run:
+## 🐔 Run the neural (Python) models and extract activations / posteriors for MATLAB
 
 ```bash
-python scripts/train_fcn.py --config configs/fcn.example.yaml
+python main.py 
 ```
 
-The final checkpoint is saved in:
+The script will automatically:
 
-```text
-outputs/checkpoints/fcn_prisma_final.pt
-```
+1. build the PRISMA dataset,
+2. train the selected neural model,
+3. save the checkpoint in checkpoints/,
+4. extract activations and posteriors,
+5. save MATLAB-compatible .mat tensors in PRISMA_Tensors/.
 
-### Train the cross-modal attention / ViT-style model
+Example output files:
 
-Edit `configs/vit.example.yaml`, then run:
-
-```bash
-python scripts/train_vit.py --config configs/vit.example.yaml
-```
-
-The final checkpoint is saved in:
-
-```text
-outputs/checkpoints/vit_prisma_final.pt
-```
-
-### Export activations/posteriors for MATLAB
-
-Edit `configs/extract_activations.example.yaml`, then run:
-
-```bash
-python scripts/extract_activations.py --config configs/extract_activations.example.yaml
-```
-
-The script saves `.mat` files such as:
-
-```text
-outputs/activations/<tile_id>/posteriors_pan.mat
-outputs/activations/<tile_id>/posteriors_hsi.mat
-```
-
-Copy or symlink them to `data/mat/activations/` if the MATLAB routines should consume them directly.
+PRISMA_Tensors/<dataset>_<CNN_model>_post6_PAN.mat
+PRISMA_Tensors/<dataset>_<CNN_model>_post6_HYS.mat
+PRISMA_Tensors/<dataset>_<CNN_model>_act_8_PAN.mat
+PRISMA_Tensors/<dataset>_<CNN_model>_act_8_HYS.mat
 
 
 ## 🪺 Multiresolution CRF (matlab)
