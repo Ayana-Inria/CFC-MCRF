@@ -151,4 +151,4 @@ The code is released under the GPL-3.0-only license. See LICENSE.md for more det
 
 ## 🍽️ Acknowledgements
 
-This work was conducted at [INRIA](https://team.inria.fr/ayana/team-members/), d'Université Côte d'Azur and at the [University of Genoa](http://phd-stiet.diten.unige.it/), partially supported by the Italian Space Agency (ASI) within the Framework of the Project under Grant PRISMA-Learn-ASI no. 2022-12-U.0. 
+This work was conducted at [INRIA](https://team.inria.fr/ayana/team-members/), Université Côte d'Azur and at the [University of Genoa](http://phd-stiet.diten.unige.it/), partially supported by the Italian Space Agency (ASI) within the Framework of the Project under Grant PRISMA-Learn-ASI no. 2022-12-U.0. 
