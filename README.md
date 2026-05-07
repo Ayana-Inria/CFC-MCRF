@@ -74,17 +74,18 @@ The script will automatically:
 
 1. build the PRISMA dataset,
 2. train the selected neural model,
-3. save the checkpoint in checkpoints/,
+3. save the checkpoint in `checkpoints/`,
 4. extract activations and posteriors,
-5. save MATLAB-compatible .mat tensors in PRISMA_Tensors/.
+5. save MATLAB-compatible .mat tensors in `PRISMA_Tensors/`.
 
 Example output files:
 
+```
 PRISMA_Tensors/<dataset>_<CNN_model>_post6_PAN.mat
 PRISMA_Tensors/<dataset>_<CNN_model>_post6_HYS.mat
 PRISMA_Tensors/<dataset>_<CNN_model>_act_8_PAN.mat
 PRISMA_Tensors/<dataset>_<CNN_model>_act_8_HYS.mat
-
+```
 
 ## 🪺 Multiresolution CRF (matlab)
 
