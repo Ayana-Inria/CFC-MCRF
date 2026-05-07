@@ -6,7 +6,7 @@ This repository contains the code related to the TGRS'26 paper:
 M. Pastorino, G. Moser, S. B. Serpico and J. Zerubia, "Cross-Modal Fusion and Classification of Hyperspectral and Panchromatic Remote Sensing Images with Deep Learning and Multiscale CRFs," in IEEE Transactions on Geoscience and Remote Sensing, doi: 10.1109/TGRS.2026.3686949.
 
 
-<IMG> 
+![screenshot](arch.PNG)
 
 The private imagery, clusters, activations, checkpoints, and `.mat` files are **not** included in the repository. Follow the folder layout below to rebuild the project locally.
 
