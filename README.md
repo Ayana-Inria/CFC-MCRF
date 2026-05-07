@@ -73,7 +73,7 @@ python main.py
 The script will automatically:
 
 1. build the PRISMA dataset,
-2. train the selected neural model,
+2. train the selected neural model (ViT or CNN),
 3. save the checkpoint in `checkpoints/`,
 4. extract activations and posteriors,
 5. save MATLAB-compatible .mat tensors in `PRISMA_Tensors/`.
